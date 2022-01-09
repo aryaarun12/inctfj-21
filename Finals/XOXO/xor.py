@@ -17,16 +17,12 @@ with open('xoxo.png', 'rb') as f:
 '''
 #repeating xor
 import codecs
-a=[];
+a=[];key=b'eAsy-x0r'
 with open('xoxo.png', 'rb') as f:
-	h =f.read().hex()
-	b=codecs.decode(h,"hex")
-	key=b'eAsy-x0r'
-	lk=len(key);a=[]
-	for i in range(0,len(b)):
-		a.append(b[i]^key[i % lk])
-	j=bytes(a)
-	print(bytes(a))
-with open('xor.png', 'wb') as m:
-	m.write(j)
+	h =f.read()
+	for i in range(0,len(h)):
+		a.append(h[i]^key[i % len(key)])
+with open('f.png', 'wb') as m:
+	m.write(bytes(a))
+	
 '''
